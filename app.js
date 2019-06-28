@@ -8,12 +8,18 @@ const http = require('http');
 // Variable para configuraciòn de express con los md
 const expressConfig = require('./config/express');
 
+// Variable para rutas
+const routeConfig = require('./routes.js');
+
 // Setup Server
 const app = express();
 const server = http.createServer(app);
 
 // Llamado de la configuraciòn express
 expressConfig(app);
+
+// Llamado de las rutas (instancia)
+routeConfig(app);
 
 const config = {
   port: 8080,
